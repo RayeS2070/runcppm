@@ -10,19 +10,14 @@ set(CMAKE_CXX_SCAN_FOR_MODULES ON)
 add_executable(${CMAKE_PROJECT_NAME})
 
 target_sources(
-    ${CMAKE_PROJECT_NAME}
-    PRIVATE
-    src/main.cpp
-)
-
-target_sources(
-    ${CMAKE_PROJECT_NAME}
-    PRIVATE
-    FILE_SET CXX_MODULES FILES
-    src/ext.cppm
+        ${CMAKE_PROJECT_NAME}
+        PRIVATE
+        src/main.cpp
+        PRIVATE FILE_SET CXX_MODULES FILES
+        src/ext.cppm
 )
 
 set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES
-    CXX_MODULE_STD ON
-    CXX_SCAN_FOR_MODULES ON
+        CXX_MODULE_STD ON
+        CXX_SCAN_FOR_MODULES ON
 )
